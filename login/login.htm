@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Log in</title>
+</head>
+<body>
+    <div class="login-box">
+        <form id="login-form">
+            <div class="login-wrap">
+                <div class="login-html">
+
+                    
+                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                    <div class="login-form">
+                        <div class="sign-in-htm">
+                            <div class="group">
+                                <label for="user" class="label">Username</label>
+                                <input id="user" type="text" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Password</label>
+                                <input id="pass" type="password" class="input" data-type="password">
+                                <span id="password-error" style="color: red;"></span> <!-- Display password error here -->
+                            </div>
+                            <div class="group">
+                                <input id="check" type="checkbox" class="check" checked>
+                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="Sign In">
+        
+
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="#forgot">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('user').value;
+            var password = document.getElementById('pass').value;
+            // Check if the username and password are correct
+            if (username === 'ebtsam' && password === 'aa12') {
+                alert("You have been logged in successfully!");
+                // Redirect to homepage
+                window.location.href = "step1.html"; // Replace "home.html" with your homepage URL
+            } else {
+                document.getElementById('password-error').innerText = "The username or password is incorrect";
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+</html>
